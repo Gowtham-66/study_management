@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Study List</title>
+</head>
+<body>
+    <h1>Study Management</h1>
+    <a href="{% url 'study_create' %}">Add Study</a>
+    <ul>
+        {% for study in studies %}
+        <li>
+            {{ study.study_name }} - {{ study.study_phase }} - {{ study.sponsor_name }}
+            <a href="{% url 'study_detail' study.pk %}">View</a>
+            <a href="{% url 'study_update' study.pk %}">Edit</a>
+            <a href="{% url 'study_delete' study.pk %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

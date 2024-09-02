@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create or Edit Study</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|yesno:"Edit Study,Create Study" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'study_list' %}">Cancel</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Study</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>View Study</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Study Name</th>
+                <td>{{ study.study_name }}</td>
+            </tr>
+            <tr>
+                <th>Study Description</th>
+                <td>{{ study.study_description }}</td>
+            </tr>
+            <tr>
+                <th>Study Phase</th>
+                <td>{{ study.study_phase }}</td>
+            </tr>
+            <tr>
+                <th>Sponsor Name</th>
+                <td>{{ study.sponsor_name }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'study_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</body>
+</html>
